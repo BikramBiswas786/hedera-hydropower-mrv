@@ -1,0 +1,8 @@
+step,hedera_id,type,hashscan_link
+operator_account,0.0.6255927,Account,https://hashscan.io/testnet/account/0.0.6255927
+grandfather_account,0.0.6255880,Account,https://hashscan.io/testnet/account/0.0.6255880
+did_topic_1,0.0.7462776,Topic,https://hashscan.io/testnet/topic/0.0.7462776
+did_topic_2,0.0.7462600,Topic,https://hashscan.io/testnet/topic/0.0.7462600
+token_20pct,0.0.7462931,Token,https://hashscan.io/testnet/token/0.0.7462931
+token_15pct,0.0.7462932,Token,https://hashscan.io/testnet/token/0.0.7462932
+token_10pct,0.0.7462933,Token,https://hashscan.io/testnet/token/0.0.7462933
