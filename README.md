@@ -86,3 +86,9 @@ explicitly scoped as **bounty deliverables**, not prerequisites.
 
 > A hydropower-exclusive MRV methodology on Hedera with device DIDs, immutable audit,
 > verifier-controlled certification, and tokenized RECs.
+>
+## References
+
+- Hedera contribution guidance: docs/hedera-contribution-notes.md
+- Guardian alignment notes: docs/guardian-alignment.md
+
