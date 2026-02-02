@@ -7,6 +7,28 @@ Status: Live POC, Methodology Submission
 
 ---
 
+# Hedera Hydropower MRV Methodology
+
+> **DLT Earth Bounty Submission** | Live on Hedera Testnet
+
+[![Testnet Status](https://img.shields.io/badge/Testnet-Live-success)](https://hashscan.io/testnet/account/0.0.6255927)
+[![Bounty Request](https://img.shields.io/badge/Bounty-$5000-blue)](./BOUNTY_REQUEST.md)
+
+A production-ready hydropower MRV (Measurement, Reporting, Verification) methodology deployed on Hedera, featuring device-level DIDs, automated verification, and renewable energy credit issuance.
+
+📄 **[View Bounty Request](./BOUNTY_REQUEST.md)** | 🔗 **[Live Evidence](./EVIDENCE.md)**
+
+---
+
+## Quick Verification
+
+Verify this methodology is live on Hedera Testnet:
+1. [Operator Account](https://hashscan.io/testnet/account/0.0.6255927) - All transactions
+2. [DID Topic](https://hashscan.io/testnet/topic/0.0.7462776) - Identity registry
+3. [REC Token](https://hashscan.io/testnet/token/0.0.7462931) - NFT with 20% royalty
+
+
+
 ## Executive Summary
 
 This repository documents a **completed, on-chain Proof of Concept** for a
