@@ -1,37 +1,24 @@
-﻿# Hydropower dMRV – Testnet Monitoring Report (Scenario 1 – January)
+﻿# Hydropower dMRV – Testnet Monitoring Report (Scenario 1 – January 2026)
+
+This report summarizes a synthetic, ACM0002-style monitoring scenario for a single hydropower unit on Hedera Testnet using the hydropower dMRV mini-tool (Testnet only, PoC).
+
+---
+
+## 1. Scenario overview
 
 - Device: TURBINE-1
-- Period: 2026-01-01 to 2026-01-30
-- Total MWh (EG_month): 11260  <!-- from /mrv-snapshot -->
-- EF_grid: 0.8 tCO2/MWh (illustrative)
+- Period: 2026-01 (synthetic month on Testnet)
+- Number of telemetry readings ingested: 91
+- Network: Hedera Testnet
+- Tool: Hydropower dMRV mini-tool (`POST /telemetry`, `GET /mrv-snapshot`)  
 
-Baseline emissions:
-BE_month = EG_month × EF_grid = 11260 × 0.8 = 9008 tCO2
+Telemetry is synthetic but follows a realistic daily net export pattern. Each reading is signed by a gateway key, verified against a DID on an HCS topic, and wrapped into an `AUDITv1` envelope anchored on-chain.
 
-Project emissions PE_month = 0 (PoC)
-Leakage LE_month = 0 (PoC)
+---
 
-Emission reductions:
-ER_month = BE_month - PE_month - LE_month = 9008 tCO2
+## 2. MRV snapshot (from mini-tool)
 
-Key Testnet evidence (see evidence/txids.csv):
-- Scenario 1 daily AUDITv1 txids (rows SCENARIO1_DAYxx)
-- Topic: 0.0.7462776 on HashScan
+The canonical MRV snapshot for Scenario 1 is obtained from the live Testnet mini-tool:
 
-- Device: TURBINE-1
-- Period: 2026-01-01 to 2026-01-30
-- Total MWh (EG_month): 180
-- EF_grid: 0.8 tCO2/MWh (illustrative)
-
-Baseline emissions:  
-BE_month = EG_month × EF_grid = 180 × 0.8 = 144 tCO2
-
-Project emissions PE_month = 0 (PoC)  
-Leakage LE_month = 0 (PoC)
-
-Emission reductions:  
-ER_month = BE_month - PE_month - LE_month = 144 - 0 - 0 = 144 tCO2
-
-Key Testnet evidence (see evidence/txids.csv):
-- Scenario 1 daily AUDITv1 txids (rows SCENARIO1_DAYxx)  <!-- fill later when you wire Hedera -->
-- Topic: 0.0.7462776 on HashScan  <!-- keep this as reference from your docs -->
+```text
+GET /mrv-snapshot/TURBINE-1?period=2026-01
