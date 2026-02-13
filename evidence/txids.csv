@@ -53,3 +53,4 @@ verification,operator1_operations,https://hashscan.io/testnet/account/0.0.625592
 verification,operator2_operations,https://hashscan.io/testnet/account/0.0.6255880/operations,200+ transactions
 verification,did_topic_messages,https://hashscan.io/testnet/topic/0.0.7462776/messages,Gateway signed messages
 verification,token_others_tab,https://hashscan.io/testnet/token/0.0.7462931/others,Royalty configuration proof
+TELEMETRY,TURBINE-1,0.0.7462776,0.0.6255927@1770968503.647353204,https://hashscan.io/testnet/transaction/0.0.6255927@1770968503.647353204

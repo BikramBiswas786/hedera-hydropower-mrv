@@ -114,3 +114,19 @@ explicitly scoped as **bounty deliverables**, not prerequisites.
 - Hedera contribution guidance: docs/hedera-contribution-notes.md
 - Guardian alignment notes: docs/guardian-alignment.md
 
+## Documentation map (for reviewers)
+If you are a verifier (VVB) or methodology reviewer, read the docs in this order:
+1. Hydropower MRV Methodology  
+   High-level description of Measurement → Reporting → Verification → Certification → Retirement on Hedera Testnet.
+2. ACM0002 alignment and core math  
+   - docs/ACM0002-Alignment-Matrix.md  
+   - docs/ACM0002-BASELINE-STUDY.md  
+   - docs/ACM0002-ADDITIONALITY.md  
+   - docs/MONITORING-PLAN.md  
+3. Digital integrity and regulatory status  
+   - docs/DATA-INTEGRITY-DESIGN.md  
+   - docs/REGULATORY-STATUS.md  
+4. Tests and Testnet evidence  
+   - docs/TEST-RESULTS.md  
+   - docs/Testnet-Evidence.md  
+   - evidence/txids.csv
