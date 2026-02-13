@@ -30,3 +30,9 @@ build/
 
 # Service-specific
 code/service/package-lock.json
+.env
+.env.testnet
+.env.mainnet
+.env
+.env.testnet
+.env.mainnet

@@ -1,0 +1,18 @@
+﻿{
+  "project": {
+    "name": "Hydro Plant X",
+    "turbines": 100,
+    "methodology": "ACM0002",
+    "scope": "project_only"
+  },
+  "anchoring": {
+    "mode": "merkle_aggregated",
+    "frequency": "daily",
+    "topicId": "0.0.7462600",
+    "batch_mode": "multi_turbine"
+  },
+  "ai_verifier": {
+    "enabled": false,
+    "auto_approve_threshold": 0.90
+  }
+}

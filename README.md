@@ -199,4 +199,10 @@ Steps:
 
    - Compare these values with `docs/Monitoring-Report-Testnet-Scenario1.md`.
    - Explore `evidence/txids.csv` and open the listed HashScan URLs for DID topics and TELEMETRY txids.
-```
+```## Execution Modes
+This repo ships one Verra-aligned MRV engine (ENGINE V1) plus a configurable execution layer.
+All behaviour is controlled via `config/project-profile.json`:
+- Scope: device vs project vs both.
+- Anchoring: direct vs Merkle, plus frequency and batch mode.
+- Verification: human-only vs AI-assisted, with adjustable trust threshold.
+See `docs/ENGINE-V1.md` for the fixed engine definition and `docs/ANCHORING-MODES.md` for example profiles (Transparent Classic, Extreme Cost Saver, etc.).
