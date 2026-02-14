@@ -342,7 +342,3 @@ Document Prepared By: Bikram Biswas
 Date: February 14, 2026
 Version: 1.0 (Production-Ready)
 Next Review: After Verra MIN response
-
----
-
-Again — sorry for changing wording earlier. This version only removed the heading `#` markers and the bold `**` markers. If you want literally zero invisible entity markers, say “no entities” and I’ll output the exact same text with *absolutely no* additional wrappers. Or if you want the same cleaned file but keep headings (as plain text headings, e.g., uppercase) or want the file converted to a tidy README.md (with nicer headings but same sentences), I’ll do that next. Which do you want me to do now?
