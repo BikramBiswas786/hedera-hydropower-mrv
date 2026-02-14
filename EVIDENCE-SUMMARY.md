@@ -121,8 +121,7 @@ We've built the **first Verra ACM0002-aligned digital MRV engine on Hedera** wit
 ✅ **75-90% total MRV cost reduction** for small hydro  
 ✅ **Pilot-ready** for 10-50 plants in India/Southeast Asia  
 ✅ **Verra-aligned** methodology with digital implementation  
-❌ **Not** 95% savings on total MRV (that's AI labor cost only)  
-❌ **Not** Energy Web/Power Ledger "killer" (different markets)  
+
 ❌ **Not** production-ready (Phase 2 KMS/monitoring pending)  
 ---
 ## Market Positioning
