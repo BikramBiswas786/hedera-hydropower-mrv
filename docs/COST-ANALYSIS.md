@@ -7,7 +7,7 @@
 - RECs minted: 2,450
 - Anomalies detected: 47 (1.9% rejection rate)
 - Average latency: 2.3 seconds
-- Total cost: 6.88 USD (≈ 0.0028 USD/REC for HCS + HTS fees)
+- Total cost: 3.88 USD TO 6.88 USD (≈ 0.0028 USD/REC for HCS + HTS fees)
 ## 10-Year Projection – 100 kW Plant
 Assuming 500,000 RECs/year (500 MWh):
 - Traditional: 5,000,000 USD/year, 50,000,000 USD over 10 years.
