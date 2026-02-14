@@ -1,14 +1,18 @@
-ACM0002 Alignment Matrix – Digital MRV Implementation
+# ACM0002 Alignment Matrix – Digital MRV Implementation
 
-Document: ACM0002 Alignment Matrix
-Project: Hedera Hydropower Digital MRV Tool
-Version: 1.0
-Date: February 14, 2026
-Status: Production-Ready Phase 1
+## Document: ACM0002 Alignment Matrix
+
+## Project: Hedera Hydropower Digital MRV Tool
+
+## Version: 1.0
+
+## Date: February 14, 2026
+
+## Status: Production-Ready Phase 1
 
 ---
 
-Executive Summary
+## Executive Summary
 
 This document provides a row-by-row mapping of ACM0002 (Approved Consolidated Methodology for Grid-connected Renewable Electricity Generation) requirements to the Hedera Hydropower Digital MRV Tool implementation. The tool is designed to support and implement ACM0002 calculations and monitoring, not replace or modify the methodology itself.
 
@@ -16,7 +20,7 @@ Key Principle: The digital tool is a methodology implementation layer, not a met
 
 ---
 
-Part 1: ACM0002 Scope and Applicability
+## Part 1: ACM0002 Scope and Applicability
 
 | ACM0002 Section | Requirement                                       | Implementation                                             | Code Reference                          | Testnet Evidence                       |
 | --------------- | ------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------- | -------------------------------------- |
@@ -27,7 +31,7 @@ Part 1: ACM0002 Scope and Applicability
 
 ---
 
-Part 2: Baseline Emissions Calculation (BE)
+## Part 2: Baseline Emissions Calculation (BE)
 
 | ACM0002 Section | Requirement                                    | Implementation                                              | Code Reference                                                        | Testnet Evidence                        |
 | --------------- | ---------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------- |
@@ -39,7 +43,7 @@ Part 2: Baseline Emissions Calculation (BE)
 
 ---
 
-Part 3: Project Emissions Calculation (PE)
+## Part 3: Project Emissions Calculation (PE)
 
 | ACM0002 Section | Requirement                           | Implementation                                         | Code Reference                                  | Testnet Evidence                    |
 | --------------- | ------------------------------------- | ------------------------------------------------------ | ----------------------------------------------- | ----------------------------------- |
@@ -49,7 +53,7 @@ Part 3: Project Emissions Calculation (PE)
 
 ---
 
-Part 4: Leakage Emissions Calculation (LE)
+## Part 4: Leakage Emissions Calculation (LE)
 
 | ACM0002 Section | Requirement                               | Implementation                                                         | Code Reference                                   | Testnet Evidence                  |
 | --------------- | ----------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------ | --------------------------------- |
@@ -59,7 +63,7 @@ Part 4: Leakage Emissions Calculation (LE)
 
 ---
 
-Part 5: Emission Reductions Calculation (ER)
+## Part 5: Emission Reductions Calculation (ER)
 
 | ACM0002 Section | Requirement                             | Implementation                              | Code Reference                                               | Testnet Evidence                       |
 | --------------- | --------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | -------------------------------------- |
@@ -69,7 +73,7 @@ Part 5: Emission Reductions Calculation (ER)
 
 ---
 
-Part 6: Monitoring and Data Collection
+## Part 6: Monitoring and Data Collection
 
 | ACM0002 Section   | Requirement                      | Implementation                                           | Code Reference                            | Testnet Evidence                     |
 | ----------------- | -------------------------------- | -------------------------------------------------------- | ----------------------------------------- | ------------------------------------ |
@@ -81,7 +85,7 @@ Part 6: Monitoring and Data Collection
 
 ---
 
-Part 7: Additionality Assessment
+## Part 7: Additionality Assessment
 
 | ACM0002 Section     | Requirement                       | Implementation                                      | Code Reference                  | Testnet Evidence              |
 | ------------------- | --------------------------------- | --------------------------------------------------- | ------------------------------- | ----------------------------- |
@@ -92,7 +96,7 @@ Part 7: Additionality Assessment
 
 ---
 
-Part 8: Verification and Validation
+## Part 8: Verification and Validation
 
 | ACM0002 Section          | Requirement                       | Implementation                                         | Code Reference                  | Testnet Evidence          |
 | ------------------------ | --------------------------------- | ------------------------------------------------------ | ------------------------------- | ------------------------- |
@@ -103,7 +107,7 @@ Part 8: Verification and Validation
 
 ---
 
-Part 9: Reporting and Issuance
+## Part 9: Reporting and Issuance
 
 | ACM0002 Section     | Requirement                                | Implementation                                | Code Reference                              | Testnet Evidence                       |
 | ------------------- | ------------------------------------------ | --------------------------------------------- | ------------------------------------------- | -------------------------------------- |
@@ -114,9 +118,9 @@ Part 9: Reporting and Issuance
 
 ---
 
-Part 10: Key Implementation Details
+## Part 10: Key Implementation Details
 
-10.1 Physics Constraints (Hydropower-Specific)
+### 10.1 Physics Constraints (Hydropower-Specific)
 
 The tool implements hydropower-specific physics constraints to detect anomalies:
 
@@ -145,7 +149,9 @@ if (deviation > 0.15) {
 
 Testnet Evidence: Scenario 1 telemetry validated against physics constraints
 
-10.2 Temporal Consistency Checks
+---
+
+### 10.2 Temporal Consistency Checks
 
 The tool verifies that generation data is temporally consistent:
 
@@ -168,7 +174,9 @@ if (currentGeneration < previousGeneration) {
 
 Testnet Evidence: 91 readings in Scenario 1 pass temporal checks
 
-10.3 Environmental Bounds Checks
+---
+
+### 10.3 Environmental Bounds Checks
 
 The tool verifies environmental parameters are within expected ranges:
 
@@ -191,7 +199,9 @@ if (telemetry.ph < 6.5 || telemetry.ph > 8.5) {
 
 Testnet Evidence: Scenario 1 environmental data within bounds
 
-10.4 Statistical Anomaly Detection
+---
+
+### 10.4 Statistical Anomaly Detection
 
 The tool uses 3-sigma statistical analysis to detect outliers:
 
@@ -212,7 +222,9 @@ if (zScore > 3) {
 
 Testnet Evidence: 47 anomalies detected in 5,103 readings (1.9% rejection rate)
 
-10.5 AI-Assisted Verification
+---
+
+### 10.5 AI-Assisted Verification
 
 The tool implements AI-assisted verification to reduce manual review burden:
 
@@ -241,7 +253,7 @@ Testnet Evidence: AI verifier processed 2,450 readings with 90%+ auto-approval r
 
 ---
 
-Part 11: Methodology Integrity Statement
+## Part 11: Methodology Integrity Statement
 
 This tool does NOT:
 
@@ -263,7 +275,7 @@ Conclusion: The tool is a digital implementation of ACM0002, not a methodology c
 
 ---
 
-Part 12: Verification Links (On-Chain Evidence)
+## Part 12: Verification Links (On-Chain Evidence)
 
 All implementation details are verifiable on Hedera Testnet:
 
@@ -279,7 +291,7 @@ Note: explorer references are surfaced for reviewer convenience (explorer: HashS
 
 ---
 
-Part 13: Testing and Validation Results
+## Part 13: Testing and Validation Results
 
 Test Coverage: 95%+ of ENGINE V1 logic covered by unit tests
 
@@ -310,7 +322,7 @@ Scenario 1 Results:
 
 ---
 
-Part 14: Roadmap to Verra Approval
+## Part 14: Roadmap to Verra Approval
 
 Phase 0 (Complete): Testnet foundation, evidence package, MIN submitted
 Phase 1 (Current): Mini-tool API, Scenario 1 monitoring report, alignment matrix
@@ -323,7 +335,7 @@ Note: Verra referenced as registry steward (Verra organization markers included 
 
 ---
 
-Conclusion
+## Conclusion
 
 This alignment matrix demonstrates that the Hedera Hydropower Digital MRV Tool is a complete, production-ready implementation of ACM0002 requirements. All methodology requirements are met, all calculations are transparent and verifiable, and all on-chain evidence is publicly accessible on Hedera Testnet.
 
@@ -338,7 +350,10 @@ Status: Phase 1 Complete, Ready for Phase 2 (Verra MIN Review)
 
 ---
 
-Document Prepared By: Bikram Biswas
-Date: February 14, 2026
-Version: 1.0 (Production-Ready)
-Next Review: After Verra MIN response
+## Document Prepared By: Bikram Biswas
+
+## Date: February 14, 2026
+
+## Version: 1.0 (Production-Ready)
+
+## Next Review: After Verra MIN response
