@@ -1,4 +1,4 @@
-const {
+﻿const {
   Client,
   TopicMessageSubmitTransaction,
   PrivateKey,
@@ -240,7 +240,7 @@ function detectStatisticalAnomalies(current, history) {
     zScore: parseFloat(z.toFixed(2)),
     mean: parseFloat(mean.toFixed(2)),
     stdDev: parseFloat(stdDev.toFixed(2)),
-    reason: status === 'OUTLIER' ? `Statistical outlier: Z-score ${z.toFixed(2)} (>3σ)` : null
+    reason: status === 'OUTLIER' ? `Statistical outlier: Z-score ${z.toFixed(2)} (>3Ïƒ)` : null
   };
 }
 
@@ -429,17 +429,12 @@ class EngineV1 {
     // Publish to HCS
     const topicId = TopicId.fromString(AUDIT_TOPIC_ID);
     const message = Buffer.from(JSON.stringify(attestation));
-
-    const tx =   new TopicMessageSubmitTransaction()
-      .setTopicId(topicId)
-      .setMessage(message)
-            .freezeWith(client);
-      
-
+    const tx = new TopicMessageSubmitTransaction({
+      topicId: topicId,
+      message: message
+    });
     const resp = await tx.execute(client);
-    const receipt = await resp.getReceipt(client);
-
-    // Update history
+    const receipt = await resp.getReceipt(client);    // Update history
     history.push(telemetry.readings);
 
     return {
@@ -548,6 +543,7 @@ async function main() {
 main().catch(console.error);
 
 module.exports = { EngineV1 };
+
 
 
 

@@ -1,0 +1,92 @@
+{
+  "attestation": {
+    "deviceId": "TURBINE-1",
+    "timestamp": "2026-02-15T23:24:41.689Z",
+    "verificationStatus": "APPROVED",
+    "verificationMethod": "AI_AUTO_APPROVED",
+    "trustScore": 1,
+    "reasoning": "High confidence (100.0%). All checks passed.",
+    "checks": {
+      "physics": {
+        "score": 1,
+        "status": "PERFECT",
+        "deviation": 4.06,
+        "expectedPowerKw": 938.08,
+        "measuredPowerKw": 900,
+        "reason": null
+      },
+      "temporal": {
+        "score": 1,
+        "status": "FIRST_READING",
+        "genChange": 0,
+        "flowChange": 0,
+        "headChange": 0,
+        "reason": null
+      },
+      "environmental": {
+        "score": 1,
+        "status": "PASS",
+        "details": {
+          "pH": {
+            "value": 7.2,
+            "status": "PERFECT",
+            "score": 1
+          },
+          "turbidity": {
+            "value": 10,
+            "status": "PERFECT",
+            "score": 1
+          },
+          "temperature": {
+            "value": 18,
+            "status": "PERFECT",
+            "score": 1
+          }
+        },
+        "reason": null
+      },
+      "statistical": {
+        "score": 1,
+        "status": "NO_HISTORY",
+        "zScore": 0,
+        "mean": 0,
+        "stdDev": 0,
+        "reason": null
+      },
+      "consistency": {
+        "score": 1,
+        "status": "PASS",
+        "details": {
+          "capacity": {
+            "status": "OK",
+            "score": 1
+          },
+          "flow": {
+            "status": "OK",
+            "score": 1
+          },
+          "head": {
+            "status": "OK",
+            "score": 1
+          },
+          "efficiency": {
+            "status": "OK",
+            "score": 1
+          }
+        },
+        "reason": null
+      }
+    },
+    "calculations": {
+      "EG_MWh": 0.9,
+      "EF_grid_tCO2_per_MWh": 0.8,
+      "BE_tCO2": 0.72,
+      "PE_tCO2": 0,
+      "LE_tCO2": 0,
+      "ER_tCO2": 0.72,
+      "RECs_issued": 0.72
+    }
+  },
+  "transactionId": "0.0.6255927@1771197875.666115168",
+  "status": "SUCCESS"
+}

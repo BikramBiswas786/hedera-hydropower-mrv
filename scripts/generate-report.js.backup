@@ -1,0 +1,16 @@
+﻿require('dotenv').config();
+const fs = require('fs');
+if (!fs.existsSync('../last-result.json')) {
+  console.log('No result found. Run 03_submit_telemetry.js first.');
+  process.exit(0);
+}
+const result = JSON.parse(fs.readFileSync('../last-result.json', 'utf8'));
+console.log('\n=== HYDROPOWER MRV REPORT ===');
+console.log(`Device: ${result.attestation.deviceId}`);
+console.log(`Status: ${result.attestation.verificationStatus}`);
+console.log(`Trust Score: ${result.attestation.trustScore}`);
+console.log(`RECs Issued: ${result.attestation.calculations.RECs_issued} tCO2`);
+console.log(`Transaction: ${result.transactionId}`);
+console.log(`\nPhysics: ${result.attestation.checks.physics.status} (${result.attestation.checks.physics.score})`);
+console.log(`Environmental: ${result.attestation.checks.environmental.status} (${result.attestation.checks.environmental.score})`);
+console.log('\n✓ Report complete!');
