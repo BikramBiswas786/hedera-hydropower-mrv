@@ -1,0 +1,146 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Hedera Hydropower MRV API",
+    "version": "1.0.0",
+    "description": "REST API for automated MRV (Monitoring, Reporting, Verification) of hydropower plants using Hedera Hashgraph",
+    "contact": {
+      "name": "API Support",
+      "url": "https://github.com/BikramBiswas786/hedera-hydropower-mrv"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local development"
+    },
+    {
+      "url": "https://hedera-hydropower-mrv.vercel.app",
+      "description": "Production"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health check",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Service is healthy"
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "summary": "Prometheus metrics",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Metrics in Prometheus format",
+            "content": {
+              "text/plain": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/telemetry": {
+      "post": {
+        "summary": "Submit telemetry reading",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["plantId", "deviceId", "reading"],
+                "properties": {
+                  "plantId": { "type": "string" },
+                  "deviceId": { "type": "string" },
+                  "reading": {
+                    "type": "object",
+                    "required": ["flowRate", "head", "generatedKwh", "timestamp"],
+                    "properties": {
+                      "flowRate": { "type": "number", "description": "Flow rate in m³/s" },
+                      "head": { "type": "number", "description": "Hydraulic head in meters" },
+                      "generatedKwh": { "type": "number", "description": "Energy generated in kWh" },
+                      "timestamp": { "type": "string", "format": "date-time" },
+                      "pH": { "type": "number" },
+                      "turbidity": { "type": "number" },
+                      "temperature": { "type": "number" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Telemetry submitted successfully"
+          },
+          "400": {
+            "description": "Invalid telemetry data"
+          },
+          "401": {
+            "description": "Missing API key"
+          },
+          "403": {
+            "description": "Invalid API key"
+          }
+        }
+      }
+    },
+    "/api/plants": {
+      "post": {
+        "summary": "Register new plant",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["name", "capacity_mw"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "location": { "type": "string" },
+                  "capacity_mw": { "type": "number" },
+                  "plant_type": { "type": "string", "enum": ["run-of-river", "reservoir", "pumped-storage"] },
+                  "operator": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Plant registered successfully"
+          }
+        }
+      },
+      "get": {
+        "summary": "List all plants",
+        "responses": {
+          "200": {
+            "description": "List of plants"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    }
+  }
+}
