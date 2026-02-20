@@ -1,0 +1,54 @@
+{
+  "dashboard": {
+    "title": "Hedera Hydropower MRV",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Telemetry Submissions",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(mrv_telemetry_submissions_total[5m])",
+            "legendFormat": "{{status}}"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Verification Latency",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(mrv_verification_duration_seconds_bucket[5m]))",
+            "legendFormat": "p95"
+          },
+          {
+            "expr": "histogram_quantile(0.99, rate(mrv_verification_duration_seconds_bucket[5m]))",
+            "legendFormat": "p99"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Hedera Transaction Failures",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "increase(mrv_hedera_tx_failures_total[1h])"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Trust Scores by Device",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "mrv_trust_score",
+            "legendFormat": "{{device_id}}"
+          }
+        ]
+      }
+    ]
+  }
+}
