@@ -1,0 +1,25 @@
+{
+  "api_url": "https://hedera-hydropower-mrv.vercel.app",
+  "api_key": "your-api-key-here",
+  "plant_id": "PLANT-HP-001",
+  "device_id": "TURBINE-001",
+  "polling_interval": 300000,
+  "sensor_adapters": {
+    "flow_meter": {
+      "type": "modbus-tcp",
+      "host": "192.168.1.100",
+      "port": 502,
+      "register": 40001
+    },
+    "head_sensor": {
+      "type": "analog-4-20ma",
+      "gpio_pin": 17,
+      "scale": { "min": 0, "max": 100 }
+    },
+    "power_meter": {
+      "type": "snmp",
+      "host": "192.168.1.101",
+      "oid": "1.3.6.1.4.1.2021.10.1.3.1"
+    }
+  }
+}

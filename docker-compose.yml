@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  # PostgreSQL database
+  postgres:
+    image: postgres:14-alpine
+    container_name: mrv-postgres
+    environment:
+      POSTGRES_DB: hedera_mrv
+      POSTGRES_USER: mrv_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./src/database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./src/database/seeds.sql:/docker-entrypoint-initdb.d/02-seeds.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mrv_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # MRV API server
+  api:
+    build: .
+    container_name: mrv-api
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: postgresql://mrv_user:${DB_PASSWORD:-changeme}@postgres:5432/hedera_mrv
+      HEDERA_OPERATOR_ID: ${HEDERA_OPERATOR_ID}
+      HEDERA_OPERATOR_KEY: ${HEDERA_OPERATOR_KEY}
+      AUDIT_TOPIC_ID: ${AUDIT_TOPIC_ID}
+      REC_TOKEN_ID: ${REC_TOKEN_ID}
+      VALID_API_KEYS: ${VALID_API_KEYS}
+      CORS_ORIGIN: ${CORS_ORIGIN:-*}
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Prometheus (metrics)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mrv-prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  # Grafana (visualization)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mrv-grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin}
+      GF_INSTALL_PLUGINS: grafana-piechart-panel
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana-dashboards:/etc/grafana/provisioning/dashboards
+    ports:
+      - "3001:3000"
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  prometheus_data:
+  grafana_data:
