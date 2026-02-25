@@ -1,39 +1,59 @@
-﻿# Hydropower MRV Guardian Policy
-## Status
-This methodology has been merged into Guardian main repository as of February 5, 2026.
-**Guardian PR:** [#5687](https://github.com/hashgraph/guardian/pull/5687)
-## Policy Location in Guardian
-Once you have Guardian installed, this methodology will be available in:
-- Guardian main repository: hashgraph/guardian
-- Path: methodologies/hydropower-mrv/
-## How to Use This Methodology
-### Method 1: Access from Guardian Main Repository
-Since this methodology is now merged into Guardian's main branch, you can:
-1. Clone the Guardian repository:
-   git clone https://github.com/hashgraph/guardian.git
-   cd guardian
-2. Navigate to the methodology:
-   cd methodologies/hydropower-mrv/
-3. Follow the instructions in the methodology README
-### Method 2: Import into Guardian Instance
-If you have a running Guardian instance:
-1. Navigate to Policies section
-2. Click Import from GitHub
-3. Select repository: hashgraph/guardian
-4. Browse to: methodologies/hydropower-mrv/
-5. Import the policy configuration
-## Implementation Repository
-Full technical implementation, scripts, and evidence:
-Repository: https://github.com/BikramBiswas786/hedera-hydropower-mrv
+﻿# Hydropower MRV Methodology
+**DLT Earth Bounty Submission** — $5,000 Request
+## Live Implementation
+Complete implementation with testnet deployment:  
+🔗 [**https://github.com/BikramBiswas786/hedera-hydropower-mrv**](https://github.com/BikramBiswas786/hedera-hydropower-mrv)
+## What This Adds to Guardian
+Guardian currently supports general renewable energy and carbon methodologies, but lacks a **hydropower-exclusive MRV workflow**.
+**Hydropower has unique characteristics:**
+- Continuous generation (vs. solar's day/night cycles)
+- Water flow dependency and seasonal variability
+- Head height efficiency calculations
+- Turbidity and water quality impacts
+**This methodology introduces:**
+1. Device-level DID identities for turbines
+2. Hydro-specific telemetry (flow rate, head height, capacity factor, turbidity, pH)
+3. Verifier logic tailored to hydro generation periods
+4. On-chain issuance and retirement of hydropower RECs
 ## Live Testnet Evidence
-- Operator Account: https://hashscan.io/testnet/account/0.0.6255927
-- DID Topics: https://hashscan.io/testnet/topic/0.0.7462776
-- REC Tokens: https://hashscan.io/testnet/token/0.0.7462931
-## Methodology Documentation
-- METHODOLOGY.md - Formal MRV methodology specification
-- VERRA-ALIGNMENT.md - Verra VM0040 & I-REC compatibility
-- EVIDENCE.md - Testnet verification links
+- **Operator Account:** https://hashscan.io/testnet/account/0.0.6255927
+- **DID Topics:** https://hashscan.io/testnet/topic/0.0.7462776, https://hashscan.io/testnet/topic/0.0.7462600
+- **REC Tokens:**
+  - https://hashscan.io/testnet/token/0.0.7462931 (20% royalty)
+  - https://hashscan.io/testnet/token/0.0.7462932 (15% royalty)
+  - https://hashscan.io/testnet/token/0.0.7462933 (10% royalty)
+## Technical Components
+1. **Device-signed telemetry → HCS anchoring** (AUDITv1 pattern)
+2. **DID-on-topic** for gateway & controller DIDs
+3. **HTS unique NFT issuance (RECs)** with multi-recipient royalties
+4. **Verifier/orchestrator flow:** resolve DID → verify signature → audit → mint
+5. **Resale/royalty demo + retirement** (token burn)
+## Methodology Compliance
+- ✅ **Verra VM0040** alignment (Improved Hydrological Systems)
+- ✅ **I-REC Standard** compliance (Device Registry + Energy Tracking)
+- ✅ **Gold Standard** renewable energy requirements
+- ✅ **Formal methodology document** (see METHODOLOGY.md)
+## Bounty Request — $5,000
+**Deliverables (2-4 weeks):**
+- Automated verifier microservice (Node.js: HCS → IPFS → verify → mint)
+- IPFS workflow for metadata (minimal on-chain footprint)
+- KMS demo for supply key
+- Tests + one-click demo script
+- Open-source PR to Guardian repo + docs/video
+**Acceptance Criteria:**
+- Produces IPFS CID, HCS anchor, verifier attestation, minted NFT with CID
+- Tests pass for signature/replay checks
+- KMS demo explains production hardening
 ## Contact
-Author: Bikram Biswas (@BikramBiswas786)
-Network: Hedera Testnet
-Programme: DLT Earth Bounty
+**Bikram Biswas**  
+Independent Developer  
+Kolkata, India  
+GitHub: @BikramBiswas786
+Signed-off-by: Bikram Biswas <bikrambiswas786@gmail.com>
+
+## Schema File
+
+The methodology schema is available at: [hedera-hydropower-mrv-schema.json](hedera-hydropower-mrv-schema.json)
+
+This schema defines the data structure for the hydropower MRV methodology as merged into Guardian's main repository.
+
