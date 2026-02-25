@@ -1,0 +1,72 @@
+﻿{
+  "name": "Hydropower MRV",
+  "version": "1.0.0",
+  "description": "Hydropower MRV methodology aligned with Guardian Methodology Library and Verra requirements for renewable energy certificates.",
+  "topicDescription": "Hydropower Monitoring, Reporting, and Verification",
+  "policyTag": "hydropower-mrv",
+  "owner": "Standard Registry",
+  "schemaFile": "hedera-hydropower-mrv-schema.json",
+  "roles": [
+    "Standard Registry",
+    "Hydropower Facility Operator",
+    "Verifier",
+    "REC Purchaser"
+  ],
+  "workflow": {
+    "steps": [
+      {
+        "id": "registration",
+        "name": "Facility Registration",
+        "role": "Hydropower Facility Operator",
+        "schema": "hedera-hydropower-mrv-schema.json",
+        "description": "Register hydropower facility with capacity, location, and operational details"
+      },
+      {
+        "id": "monitoring",
+        "name": "Energy Generation Monitoring",
+        "role": "Hydropower Facility Operator",
+        "schema": "hedera-hydropower-mrv-schema.json",
+        "description": "Submit monthly generation data including energy output, water flow, and environmental metrics"
+      },
+      {
+        "id": "verification",
+        "name": "Third-Party Verification",
+        "role": "Verifier",
+        "schema": "hedera-hydropower-mrv-schema.json",
+        "description": "Verify submitted data against Verra standards and methodology requirements"
+      },
+      {
+        "id": "rec_issuance",
+        "name": "REC Token Issuance",
+        "role": "Standard Registry",
+        "description": "Issue Renewable Energy Certificate tokens on Hedera for verified generation"
+      }
+    ]
+  },
+  "documentation": {
+    "methodology": "METHODOLOGY.md",
+    "evidence": "EVIDENCE.md",
+    "verraAlignment": "VERRA-ALIGNMENT.md",
+    "bountyRequest": "BOUNTY_REQUEST.md"
+  },
+  "implementation": {
+    "repository": "https://github.com/BikramBiswas786/hedera-hydropower-mrv",
+    "frontend": "https://hydropower-mrv-19feb26.vercel.app/",
+    "network": "Hedera Testnet",
+    "operatorAccount": "0.0.6255927",
+    "topicId": "0.0.7462776"
+  },
+  "verraCompliance": {
+    "standard": "Verra VCS",
+    "applicableMethodologies": [
+      "ACM0002 - Grid-connected electricity generation from renewable sources"
+    ],
+    "monitoringParameters": [
+      "Energy generation (MWh)",
+      "Water flow rate",
+      "Grid emission factor",
+      "Environmental impact metrics"
+    ]
+  },
+  "notes": "This policy configuration is linked to the schema and methodology documentation. The live implementation demonstrates the complete MRV workflow on Hedera Testnet with working DID topics and REC token issuance."
+}
