@@ -8,180 +8,64 @@ version: "1.0"
 
 # Comparative Scientific Analysis of Three Hedera Hydropower MRV Engine Generations
 
-**Author**: AI Research Assistant  
-**Project**: Hedera Hydropower Digital MRV Tool  
-**Date**: 2026-03-09  
-**Version**: 1.0
-
-## Abstract
-
-This paper presents a structured comparative analysis of three engine generations used in the Hedera Hydropower digital MRV stack: **Engine V1 (baseline deterministic MRV)**, **Engine V1 Enhanced AI (multi-factor trust scoring)**, and **Engine V2 (two-tier operational verification modes)**. 
-
-The analysis synthesizes architecture specifications, scoring logic, on-chain evidence artifacts, and operational policy design to evaluate methodology integrity, automation potential, regulatory acceptability, and expected verification economics. 
-
-**Key Findings**: All three variants preserve ACM0002-aligned accounting logic while progressively increasing adaptive automation and evidence richness. Engine V1 provides deterministic reproducibility; Engine V1 Enhanced adds granular trust decomposition and tri-band decisioning; Engine V2 adds governance-level adaptability (strict vs evidence-rich modes).
+**Author:** AI Research Assistant  
+**Project:** Hedera Hydropower Digital MRV Tool  
+**Date:** 2026-03-09  
+**Version:** 1.0  
 
 ---
 
-## 🎯 1. Research Objective and Scope
+# Abstract
 
-### 1.1 Objective
-To compare three MRV engine types in terms of:
+This document presents a structured comparative analysis of three engine generations used in the Hedera Hydropower digital MRV stack:
+
+- **Engine V1 (baseline deterministic MRV)**
+- **Engine V1 Enhanced AI (multi-factor trust scoring)**
+- **Engine V2 (two-tier operational verification modes)**
+
+The analysis synthesizes architecture specifications, scoring logic, on-chain evidence artifacts, and operational policy design to evaluate:
+
+- methodology integrity  
+- automation potential  
+- regulatory acceptability  
+- verification economics  
+
+### Key Findings
+
+All three variants preserve **ACM0002-aligned accounting logic** while progressively increasing adaptive automation and evidence richness.
+
+| Engine | Key Capability |
+|------:|:---------------|
+| **Engine V1** | Deterministic reproducibility |
+| **V1 Enhanced** | Granular trust decomposition |
+| **Engine V2** | Governance-level operational adaptability |
+
+---
+
+# 1. Research Objective and Scope
+
+## 1.1 Objective
+
+To compare three MRV engine architectures across five dimensions:
+
 - Scientific and methodological integrity
-- Verification decision quality  
+- Verification decision quality
 - Operational and regulatory flexibility
 - Cost and labor implications
 - On-chain auditability
 
-### 1.2 Compared Systems
-| **Engine Type** | **Description** | **Maturity** |
+---
+
+## 1.2 Compared Systems
+
+| Engine Type | Description | Maturity |
 |---|---|---|
-| **Type A: Engine V1** | Baseline deterministic MRV with immutable verification logic | Production |
-| **Type B: V1 Enhanced AI** | Weighted trust scoring across 5 validation dimensions + tri-band decisions | Production (default path) |
-| **Type C: Engine V2** | Two-tier modes (strict/evidence-rich) over enhanced verification stack | Module (not default) |
+| **Type A — Engine V1** | Baseline deterministic MRV with immutable verification logic | Production Concept |
+| **Type B — Engine V1 Enhanced AI** | Weighted trust scoring across 5 validation dimensions + tri-band decisions | Production Runtime (default) |
+| **Type C — Engine V2** | Two-tier verification modes (strict / evidence-rich) | Module Layer (optional) |
 
 ---
 
-## 🔬 2. Engine Implementations in Repository
+# 2. Engine Implementations in Repository
 
-### 2.1 Current Runtime State
-
-API → Workflow → EngineV1 (AI-Enhanced, graduated scoring)
-↓ (optional extension)
-EngineV2 (two-tier governance wrapper)
-
-
-**Primary path**: `Workflow` imports `EngineV1()` → API telemetry runs V1 AI-enhanced logic [web:1][web:4]
-**Extension layer**: `EngineV2` wraps V1, adds modes/sampling/graduation [user assessment]
-
-### 2.2 Evidence Hierarchy
-
-📁 ENGINE-V1.md (baseline spec)
-📁 ENGINE V1 - Enhanced AI Trust Scoring System.md (5-layer weights)
-📁 ENGINE-V2-TWO-TIER-MODES.md.txt (governance modes)
-📁 Engine V1 Code / Engine V1 AI Enhanced Codes (implementation)
-📁 ENGINE V1/V2 - ON-CHAIN IMPLEMENTATION EVIDENCE (tx proofs)
-
-
----
-
-## ⚙️ 3. Engine Type A — V1 Baseline Deterministic
-
-### 3.1 Core Logic
-**4-layer flow**: Data → Deterministic verification → AI-assisted review → Hedera anchoring
-
-**Physics validation**:
-
-P = ρ × g × Q × H × η  (±15% tolerance)
-
-Monotonicity + environmental bounds + statistical outliers.
-
-### 3.2 Strengths/Limitations
-| Aspect | Rating |
-|--------|--------|
-| Determinism | ⭐⭐⭐⭐⭐ |
-| Flexibility | ⭐⭐ |
-| Automation | ⭐⭐⭐ |
-
----
-
-## 🤖 4. Engine Type B — V1 Enhanced AI (DEFAULT RUNTIME)
-
-### 4.1 5-Layer Trust Scoring
-
-TrustScore = 0.30×Physics + 0.25×Temporal + 0.20×Env + 0.15×Stats + 0.10×Consistency
-
-**Tri-band decisions**:
-≥0.90 = APPROVED (auto-mint RECs)
-0.50-0.89 = FLAGGED (manual review)
-<0.50 = REJECTED (fraud)
-
-
-### 4.2 Repository Status
-✅ **Active in Workflow → API path**  
-✅ Graduated/stepped scoring (not binary-only)  
-✅ Weighted aggregation + configurable thresholds
-
-### 4.3 Strengths/Limitations
-| Aspect | Rating |
-|--------|--------|
-| Explainability | ⭐⭐⭐⭐⭐ |
-| Automation | ⭐⭐⭐⭐ |
-| Complexity | ⭐⭐⭐⭐ |
-
----
-
-## 🎛️ 5. Engine Type C — V2 Two-Tier Governance (MODULE)
-
-### 5.1 Dual Operating Modes
-| **Mode** | **Auto-Approve** | **Review Rate** | **Cost/REC** |
-|----------|------------------|-----------------|--------------|
-| **A: Regulator-Strict** | ≥0.97 | 40-60% | $3-5 |
-| **B: Evidence-Rich** | ≥0.90 | 5-10% | $0.50-1.00 |
-
-### 5.2 Graduation Logic
-**A→B criteria**: ≥6mo operation, <2% anomalies, VVB sign-off, 95% data quality  
-**Reversion triggers**: Anomaly spike >5%, calibration failure, maintenance
-
-### 5.3 Repository Status
-✅ **Implemented as EngineV2 wrapper** over EngineV1  
-⚠️ **Not default API/workflow path**  
-✅ Sampling + mode switching logic exists
-
----
-
-## 📊 6. Cross-Engine Comparison Matrix
-
-| **Metric** | **V1 Baseline** | **V1 AI-Enhanced (DEFAULT)** | **V2 Two-Tier (MODULE)** |
-|------------|-----------------|------------------------------|--------------------------|
-| **Science Core** | ACM0002 + physics | Same + 5-layer weights | Same + policy controls |
-| **Decision Model** | Rule thresholds | Continuous trust + tri-band | Dual modes w/ diff thresholds |
-| **Automation** | Conservative | Moderate-High | Configurable High |
-| **Review Strategy** | Broad manual | Trust-interval targeted | Mode-dependent adaptive |
-| **Cost Potential** | Moderate | High | Highest (Mode B) |
-| **Repo Status** | Conceptual base | ✅ Active default | ✅ Module (optional) |
-
----
-
-## 💰 7. Economic Analysis
-Mode A (Strict): 40-60% auto → $15K/1000 readings → $3-5/REC
-Mode B (Rich): 90-95% auto → $500/1000 readings → $0.50-1/REC
-
-
-**V2 enables 96% cost reduction** when graduated to evidence-rich operation.
-
----
-
-## ✅ 8. Repository Implementation Status
-✅ Engine V1 AI-Enhanced = DEFAULT RUNTIME PATH (API → Workflow → EngineV1)
-✅ Graduated scoring + weighted trust (not binary-only)
-✅ V2 exists as governance wrapper/module
-⚠️ V2 NOT wired as default end-to-end engine
-✅ On-chain evidence for all decision paths
-
-
-**Best engine implemented?** V2 concept exists, **V1 AI-Enhanced is active default**.
-
----
-
-## 🚀 9. Deployment Recommendations
-NEW PROJECTS: V2 Mode A → Graduate to Mode B
-MATURE FLEETS: V2 Mode B + anomaly monitoring
-METHODOLOGY: Keep V1 core immutable, V2 as governance overlay
-
-
----
-
-## 📚 10. References
-
-1. `ENGINE-V1.md` (baseline)
-2. `ENGINE V1 - Enhanced AI Trust Scoring System.md` (5-layer scoring)
-3. `ENGINE-V2-TWO-TIER-MODES.md.txt` (governance modes)
-4. `Engine V1 Code` + `Engine V1 AI Enhanced Codes` (runtime)
-5. `ENGINE V1/V2 - ON-CHAIN EVIDENCE` (tx proofs)
-
-**Public deployment verification**: [hydropower-mrv-19feb26.vercel.app][web:4]
-
----
-*Generated: 2026-03-09 | Hedera Hydropower MRV Technical Analysis*
-
+## 2.1 Current Runtime Architecture
