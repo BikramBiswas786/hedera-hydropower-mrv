@@ -3,7 +3,7 @@ Details Comparison between 3 Different types of engines
 ```markdown
 ---
 title: "Detailed Comparative Scientific Analysis of Hedera Hydropower MRV Engine Generations v1.1"
-author: "AI Research Assistant (Perplexity)"
+author: "Bikram Biswas"
 project: "Hedera Hydropower Digital MRV Tool - https://github.com/BikramBiswas786/hedera-hydropower-mrv"
 date: "2026-03-09"
 version: "1.1 (Detailed)"
@@ -11,9 +11,9 @@ github-url: "https://github.com/BikramBiswas786/hedera-hydropower-mrv"
 live-demo: "https://hydropower-mrv-19feb26.vercel.app"
 ---
 
-# 🔬 Detailed Comparative Scientific Analysis of Three Hedera Hydropower MRV Engine Generations
+#  Detailed Comparative Scientific Analysis of Three Hedera Hydropower MRV Engine Generations
 
-**Author**: AI Research Assistant (Perplexity)  
+**Author**: Bikram Biswas
 **Project**: [Hedera Hydropower Digital MRV Tool](https://github.com/BikramBiswas786/hedera-hydropower-mrv)  
 **Date**: 2026-03-09  
 **Version**: 1.1 (Detailed Edition)  
@@ -115,7 +115,7 @@ ER = BE - PE(0) - LE(0) → RECs = ER × 1000 kgCO₂e
 
 ---
 
-## 🤖 4. Engine V1 AI-Enhanced - DEFAULT RUNTIME {#engine-v1-ai}
+##  4. Engine V1 AI-Enhanced - DEFAULT RUNTIME {#engine-v1-ai}
 
 ### 4.1 5-Layer Weighted Trust Model
 ```
@@ -147,11 +147,11 @@ Trust<0.50 → REJECTED → Fraud log (no credits)
 ✅ On-chain evidence exists for all 3 paths
 ```
 
-**Repository Status**: **🚀 PRODUCTION DEFAULT** [web:1][web:4]
+**Repository Status**: ** PRODUCTION DEFAULT** [web:1][web:4]
 
 ---
 
-## 🎛️ 5. Engine V2 Two-Tier Governance - MODULE {#engine-v2}
+##  5. Engine V2 Two-Tier Governance - MODULE {#engine-v2}
 
 ### 5.1 Dual Operational Modes (from `ENGINE-V2-TWO-TIER-MODES.md.txt`)
 | **Mode** | **Target** | **Auto-Threshold** | **Sampling** | **Cost/REC** |
@@ -189,7 +189,7 @@ EngineV2(input) {
 
 ---
 
-## 📊 6. Cross-Engine Technical Matrix {#comparison}
+##  6. Cross-Engine Technical Matrix {#comparison}
 
 | **Capability** | **V1 Baseline** | **V1 AI-Enhanced (DEFAULT)** | **V2 Two-Tier** |
 |----------------|-----------------|------------------------------|-----------------|
@@ -204,7 +204,7 @@ EngineV2(input) {
 
 ---
 
-## 💰 7. Detailed Economic Analysis {#economics}
+##  7. Detailed Economic Analysis {#economics}
 
 ### 7.1 Per 1,000 Readings Cost Breakdown
 ```
@@ -248,7 +248,7 @@ BEST ENGINE STATUS:
 
 ---
 
-## 🚀 9. Deployment & Migration Roadmap {#roadmap}
+##  9. Deployment & Migration Roadmap {#roadmap}
 
 ```
 PHASE 1 (Now): Run V1 AI-Enhanced (default)
@@ -266,7 +266,7 @@ PHASE 3 (6+mo): Graduate → V2 Mode B
 
 ---
 
-## 📚 10. Artifact References {#references}
+##  10. Artifact References {#references}
 
 ```
 Core Specs:
