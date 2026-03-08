@@ -1,14 +1,5 @@
 Details Comparison between 3 Different types of engines 
----
-title: "Comparative Scientific Analysis of Three Hedera Hydropower MRV Engine Generations"
-author: "Bikram Biswas"
-role: "Full-Stack Blockchain Developer and Principal Architect"
-project: "Hedera Hydropower Digital MRV Tool"
-repository: "https://github.com/BikramBiswas786/hedera-hydropower-mrv"
-deployment: "https://hydropower-mrv-19feb26.vercel.app"
-date: "2026-03-09"
-version: "5.0 — Complete Scientific Edition"
----
+
 
 # Comparative Scientific Analysis of Three Hedera Hydropower MRV Engine Generations: Complete Architectural, Mathematical, Implementation, and Operational Evaluation with Production Runtime Verification
 
