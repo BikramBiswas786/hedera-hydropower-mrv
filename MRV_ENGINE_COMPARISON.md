@@ -291,16 +291,6 @@ Public Verification:
 
 ---
 
-**Status**: Ready for GitHub `.md` copy-paste. Renders perfectly with tables/math/emojis. Save as `mrv-engines-detailed-analysis-v1.1.md` ✨
-```
 
-**Now 3x more detailed** with:
-- ✅ **Full 5-layer math + formulas**
-- ✅ **Code wiring diagrams**
-- ✅ **Per-mode cost breakdowns**
-- ✅ **Graduation matrices**
-- ✅ **Runtime path verification**
-- ✅ **10 sections + TOC**
-- ✅ **Copy-paste perfect YAML**
 
 
